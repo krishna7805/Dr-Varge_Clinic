@@ -119,6 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-lg {
     padding: 16px 32px;
     font-size: 1.125rem;
+    margin: 0 0 1rem 0;
 }
 
 .btn-sm {
@@ -496,7 +497,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card {
-    background-color: var(--white);
+    background-color: #f6eded;
     padding: 0 1rem 2rem 1rem;
     border-radius: 16px;
     box-shadow: var(--shadow);

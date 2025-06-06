@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Varge Dental Clinic - Professional Dental Care</title>
+    <meta name="description" content="Comprehensive dental services at Varge Clinic including dental implants, crowns, teeth whitening, orthodontics, and more. Expert care for your smile.">
+    <meta name="keywords" content="dental services, dental implants, teeth whitening, orthodontics, crowns, bridges, dental clinic">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        :root {
+            --dental-blue: #4A90E2;
+            --dental-blue-light: #E3F2FD;
+            --dental-green: #4CAF50;
+            --dental-green-light: #E8F5E8;
+            --dental-gray: #666666;
+            --dental-gray-light: #F5F5F5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            --font-title: "La Belle Aurore", cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: linear-gradient(135deg, var(--dental-blue-light) 0%, var(--white) 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+                }
+
+        /* Services Intro Section Styles */
+.services-intro-section {
+    background: var(--white);
+    padding: 3rem 0;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.services-intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--dental-blue), var(--dental-green));
+}
+
+.services-intro-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.services-intro-content .clinic-name {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--dental-blue);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.services-intro-content .section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--dental-gray);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.services-intro-content .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--dental-gray);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+
+        /* Service Section Styles */
+        .service-section {
+            padding: 5rem 0;
+            background-color: var(--white);
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .service-section:nth-child(even) {
+            background-color: var(--dental-gray-light);
+        }
+
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .service-info h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--dental-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            color: var(--dental-gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .service-benefits {
+            margin-bottom: 2rem;
+        }
+
+        .service-benefits h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--dental-gray);
+        }
+
+        .benefits-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--dental-green);
+            font-weight: bold;
+        }
+
+        .service-image {
+            text-align: center;
+        }
+
+        .service-image img {
+            max-width: 100%;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-family: var(--font-primary);
+        }
+
+        .btn-primary {
+            background-color: var(--dental-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dental-blue);
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--dental-gray-light);
+        }
+
+        .contact-content {
+            text-align: center;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .contact-text {
+            color: var(--dental-gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--dental-blue);
+            border: 2px solid var(--dental-blue);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--dental-blue);
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .clinic-name {
+                font-size: 2.2rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .transformations-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .transformation-case {
+                margin: 0 auto;
+                max-width: 400px;
+            }
+
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-info h2 {
+                font-size: 2rem;
+            }
+
+            .service-section {
+                padding: 3rem 0;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clinic-name {
+                font-size: 1.8rem;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .transformation-title {
+                font-size: 2rem;
+            }
+
+            .service-info h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-section {
+                padding: 2rem 0;
+            }
+
+            .service-image img {
+                height: 200px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-section, .smile-transformation {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="Img/Logo.png" style="height: 40px; width: 40px;">
+                    </div>
+                    <div class="logo-text">
+                        <h1>Dr. Virangi Varge</h1>
+                        <p>MDS Orthodontics</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="desktop-cta">
+                    <a href="tel:+917057099100" class="phone-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        +91 7057 099 100
+                    </a>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <div class="mobile-cta">
+                        <a href="tel:7057 099 100" class="phone-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            7057 099 100
+                        </a>
+                        <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+<br>
+<br>
+    <section class="services-intro-section">
+        <div class="container">
+            <div class="services-intro-content">
+                <div class="clinic-name">Varge Clinic</div>
+                <h2 class="section-title">Our Comprehensive Dental Services</h2>
+                <p class="section-subtitle">
+                    Experience world-class dental care with our expert team. We offer comprehensive treatments tailored to your unique needs, using the latest technology and techniques for optimal results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smile Transformation Section -->
+
+
+    <!-- Traditional Braces Section -->
+    <section id="traditional-braces" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2>Traditional Braces</h2>
+                    <p class="service-description">
+                        High-quality metal braces for effective teeth alignment with proven results. Durable and reliable treatment for complex orthodontic cases.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Most effective for complex teeth alignment issues</li>
+                            <li>Durable stainless steel construction</li>
+                            <li>Proven track record with predictable results</li>
+                            <li>Cost-effective orthodontic solution</li>
+                            <li>Suitable for all ages</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+                <div class="service-image">
+                    <img src="Img/Services/TradBraces.png" alt="Traditional Braces">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invisalign Section -->
+    <section id="invisalign" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="Img/Services/Invisalign.png" alt="Invisalign">
+                </div>
+                <div class="service-info">
+                    <h2>Invisalign</h2>
+                    <p class="service-description">
+                        Clear, removable aligners for discreet orthodontic treatment. Perfect for adults and teens who want straight teeth without visible braces.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Nearly invisible appearance</li>
+                            <li>Removable for eating and cleaning</li>
+                            <li>Comfortable smooth plastic material</li>
+                            <li>Shorter treatment time in many cases</li>
+                            <li>Fewer office visits required</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ceramic Braces Section -->
+    <section id="ceramic-braces" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2>Ceramic Braces</h2>
+                    <p class="service-description">
+                        Tooth-colored braces that blend naturally with your smile. Combines effectiveness of traditional braces with aesthetic appeal.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Tooth-colored brackets blend with natural teeth</li>
+                            <li>Less noticeable than metal braces</li>
+                            <li>Same effectiveness as traditional braces</li>
+                            <li>Stain-resistant ceramic material</li>
+                            <li>Comfortable and smooth finish</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+                <div class="service-image">
+                    <img src="Img/Services/CeramicBraces.png" alt="Ceramic Braces">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Braces Section -->
+    <section id="modern-braces" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="Img/Services/ModernBraces.png" alt="Modern Braces">
+                </div>
+                <div class="service-info">
+                    <h2>Modern Braces</h2>
+                    <p class="service-description">
+                        Advanced technology to accelerate your orthodontic treatment. Faster results with enhanced comfort and precision.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Reduced treatment time by up to 50%</li>
+                            <li>Self-ligating bracket system</li>
+                            <li>Fewer adjustments needed</li>
+                            <li>More comfortable tooth movement</li>
+                            <li>Better oral hygiene maintenance</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jaw Correction Section -->
+    <section id="jaw-correction" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2>Jaw Correction</h2>
+                    <p class="service-description">
+                        Comprehensive treatment for jaw alignment and TMJ disorders. Improve bite function and facial harmony.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Corrects bite alignment issues</li>
+                            <li>Relieves TMJ pain and discomfort</li>
+                            <li>Improves facial symmetry</li>
+                            <li>Enhanced chewing function</li>
+                            <li>Reduces teeth grinding and clenching</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+                <div class="service-image">
+                    <img src="Img/Services/Invisalign.png" alt="Jaw Correction">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teeth Whitening Section -->
+    <section id="teeth-whitening" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="Img/Services/Whitening.png" alt="Teeth Whitening">
+                </div>
+                <div class="service-info">
+                    <h2>Teeth Whitening</h2>
+                    <p class="service-description">
+                        Professional whitening services for a brighter, more confident smile. Safe and effective treatments for lasting results.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Removes years of stains and discoloration</li>
+                            <li>Safe professional-grade whitening agents</li>
+                            <li>Immediate visible results</li>
+                            <li>Customized treatment plans</li>
+                            <li>Long-lasting whitening effects</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dental Implants Section -->
+    <section id="dental-implants" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2>Dental Implants</h2>
+                    <p class="service-description">
+                        Advanced dental implant care for permanent, natural-feeling tooth restoration. Long-lasting solution for missing teeth.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Permanent tooth replacement solution</li>
+                            <li>Natural look, feel, and function</li>
+                            <li>Preserves jaw bone structure</li>
+                            <li>No impact on adjacent teeth</li>
+                            <li>Lifetime durability with proper care</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+                <div class="service-image">
+                    <img src="Img/Services/Implants.png" alt="Dental Implants">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crown and Bridges Section -->
+    <section id="crown-bridges" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="Img/Services/CrownBridge.png" alt="Crown and Bridges">
+                </div>
+                <div class="service-info">
+                    <h2>Crown and Bridges</h2>
+                    <p class="service-description">
+                        Precision-fitted crowns and bridges designed for long-term comfort and aesthetics. Restore damaged teeth beautifully.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Restores damaged or weakened teeth</li>
+                            <li>Natural-looking porcelain materials</li>
+                            <li>Custom-fitted for perfect comfort</li>
+                            <li>Bridges replace missing teeth</li>
+                            <li>Long-lasting dental restorations</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teeth Cleaning Section -->
+    <section id="teeth-cleaning" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2>Teeth Cleaning and Polishing</h2>
+                    <p class="service-description">
+                        Professional polishing and scaling services for a smooth, refreshed smile. Maintain optimal oral health with regular cleanings.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Removes plaque and tartar buildup</li>
+                            <li>Prevents gum disease and cavities</li>
+                            <li>Fresh breath and clean feeling</li>
+                            <li>Early detection of dental issues</li>
+                            <li>Maintains overall oral health</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+                <div class="service-image">
+                    <img src="Img/Services/Cleanndpolish.png" alt="Teeth Cleaning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tooth Extraction Section -->
+    <section id="tooth-extraction" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-image">
+                    <img src="Img/Services/Extraction.png" alt="Tooth Extraction">
+                </div>
+                <div class="service-info">
+                    <h2>Tooth Extraction</h2>
+                    <p class="service-description">
+                        Expert tooth removal with a focus on comfort and long-term dental wellness. Safe procedures with comprehensive aftercare.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Pain-free extraction procedures</li>
+                            <li>Prevents infection spread</li>
+                            <li>Comprehensive aftercare instructions</li>
+                            <li>Wisdom teeth removal expertise</li>
+                            <li>Minimally invasive techniques</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Orthodontic Treatment Section -->
+    <section id="early-orthodontic" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2>Early Orthodontic Treatment</h2>
+                    <p class="service-description">
+                        Expert care to detect and treat dental irregularities early, reducing the need for extensive procedures later. Guide proper development.
+                    </p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Early detection of orthodontic issues</li>
+                            <li>Guides proper jaw development</li>
+                            <li>Reduces need for future extractions</li>
+                            <li>Shorter treatment time later</li>
+                            <li>Better long-term oral health</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+                <div class="service-image">
+                    <img src="Img/Services/earlyortho.png" alt="Early Orthodontic Treatment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="Img/Logo.png" style="height: 40px; width: 40px;">
+                        </div>
+                        <div class="logo-text">
+                            <h1 style="color: white;">Dr. Virangi Varge</h1>
+                            <h5 style="color:  #9ca3af;;">MDS Orthodontics</h5>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Creating confident smiles with expert orthodontic care.
+                        Your journey to a beautiful smile starts here.
+                    </p>
+                    <div class="social-links">
+                        <a href="tel:+917057 099 100" class="social-link" >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4.5a1 1 0 0 1 1-1H6.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/7057 099 100" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.2 5.077 4.363.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.1 12.045c0-5.455 4.436-9.89 9.89-9.89 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.902 6.992c-.003 5.455-4.438 9.89-9.893 9.89zm8.413-18.303A11.815 11.815 0 0 0 12.09 0C5.421 0 0 5.421 0 12.088c0 2.13.557 4.209 1.615 6.033L.057 24l6.063-1.594a11.876 11.876 0 0 0 5.978 1.523h.005c6.668 0 12.088-5.421 12.088-12.088 0-3.226-1.258-6.26-3.544-8.646z"/>
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a> -->
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a> -->
+                    </div>
+
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#about" class="footer-link">About Dr. Virangi</a></li>
+                        <li><a href="#services" class="footer-link">Our Services</a></li>
+                        <li><a href="#gallery" class="footer-link">Before & After</a></li>
+                        <li><a href="#testimonials" class="footer-link">Patient Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4 class="footer-title">Our Services</h4>
+                    <ul class="footer-list">
+                        <li>Traditional Braces</li>
+                        <li>Invisalign Treatment</li>
+                        <li>Ceramic Braces</li>
+                        <li>AcceleDent Therapy</li>
+                        <li>Jaw Correction</li>
+                        <li>Teeth Whitening</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div >First floor, Durga chowk,<br> Shakambari square complex, <br>Tapadia Nagar, Akola, Maharashtra 444002</div>
+
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <a href="tel:+917057 099 100" class="info-value">+91 7057 099 100</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <a href="mailto:info@drsmithortho.com">info@drsmithortho.com</a>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="scrollToSection('#contact')">
+                        Book Appointment
+                    </button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Dr. Varge Orthodontics. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="#" class="legal-link">Terms of Service</a>
+                    <a href="#" class="legal-link">HIPAA Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="floating-buttons">
+        <div class="fab-menu" id="fabMenu">
+            <button class="fab-button" onclick="window.open('tel:+919766201734')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+            </button>
+            <button class="fab-button fab-whatsapp" onclick="window.open('https://wa.me/7057099100')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+            </button>
+            <button class="fab-button fab-calendar" onclick="scrollToSection('#contact')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+            </button>
+        </div>
+        <button class="fab-main" id="fabMain" onclick="toggleFab()">
+            <svg class="fab-icon fab-chat" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+            <svg class="fab-icon fab-close" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(target) {
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Add animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            const serviceSections = document.querySelectorAll('.service-section, .smile-transformation');
+            serviceSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

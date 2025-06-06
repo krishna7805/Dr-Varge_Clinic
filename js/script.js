@@ -7,7 +7,7 @@ let isFabOpen = false;
 // Gallery data
 const gallerySlides = [
     {
-        before: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        before: "Img/CERT/IOS.png",
         after: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
         title: "Adult Orthodontics",
         description: "18-month treatment with Invisalign"
@@ -17,6 +17,36 @@ const gallerySlides = [
         after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
         title: "Teen Braces",
         description: "24-month treatment with traditional braces"
+    },
+    {
+        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        title: "Ceramic Braces",
+        description: "20-month treatment with ceramic braces"
+    },
+    {
+        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        title: "Ceramic Braces",
+        description: "20-month treatment with ceramic braces"
+    },
+    {
+        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        title: "Ceramic Braces",
+        description: "20-month treatment with ceramic braces"
+    },
+    {
+        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        title: "Ceramic Braces",
+        description: "20-month treatment with ceramic braces"
+    },
+    {
+        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+        title: "Ceramic Braces",
+        description: "20-month treatment with ceramic braces"
     },
     {
         before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",

@@ -68,31 +68,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: var(--transition);
-    white-space: nowrap;
-}
 
-.btn-primary {
-    background-color: var(--dental-blue);
-    color: var(--white);
-}
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-family: var(--font-primary);
+        }
 
-.btn-primary:hover {
-    background-color: #3A7BC8;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--dental-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dental-blue-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
 
 .btn-outline {
     background-color: transparent;
@@ -998,7 +1000,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .map-card {
-    height: 250px;
+    height: 350px;
+    margin-top: 2rem;
 }
 
 .map-placeholder {

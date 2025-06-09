@@ -5,91 +5,83 @@ let currentTestimonialIndex = 0;
 let isFabOpen = false;
 
 // Gallery data
-const gallerySlides = [
-    {
-        before: "Img/CERT/IOS.png",
-        after: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Adult Orthodontics",
-        description: "18-month treatment with Invisalign"
-    },
-    {
-        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Teen Braces",
-        description: "24-month treatment with traditional braces"
-    },
-    {
-        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Ceramic Braces",
-        description: "20-month treatment with ceramic braces"
-    },
-    {
-        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Ceramic Braces",
-        description: "20-month treatment with ceramic braces"
-    },
-    {
-        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Ceramic Braces",
-        description: "20-month treatment with ceramic braces"
-    },
-    {
-        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Ceramic Braces",
-        description: "20-month treatment with ceramic braces"
-    },
-    {
-        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Ceramic Braces",
-        description: "20-month treatment with ceramic braces"
-    },
-    {
-        before: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-        title: "Ceramic Braces",
-        description: "20-month treatment with ceramic braces"
-    }
-];
+// Gallery functionality
+let currentSlide = 0;
+const totalSlides = gallerySlides.length;
 
+// Initialize the gallery on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Set up initial slide
+    updateSlide(currentSlide);
+    
+    // Update indicators based on total slides
+    updateIndicators();
+});
+
+// Function to update indicators based on total slides
+function updateIndicators() {
+    const indicatorsContainer = document.querySelector('.gallery-indicators');
+    indicatorsContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalSlides; i++) {
+        const indicator = document.createElement('button');
+        indicator.className = 'indicator' + (i === currentSlide ? ' active' : '');
+        indicator.onclick = function() { goToSlide(i); };
+        indicatorsContainer.appendChild(indicator);
+    }
+}
+
+// Function to update the slide content
+function updateSlide(index) {
+    const galleryContent = document.querySelector('.gallery-content');
+    const slide = gallerySlides[index];
+    
+    // Update the gallery content
+    galleryContent.innerHTML = `
+        <div class="gallery-images">
+            <div class="gallery-image-container">
+                <div class="gallery-badge before">BEFORE</div>
+                <img src="${slide.before}" alt="Before treatment" class="gallery-image">
+            </div>
+            <div class="gallery-image-container">
+                <div class="gallery-badge after">AFTER</div>
+                <img src="${slide.after}" alt="After treatment" class="gallery-image">
+            </div>
+        </div>
+        <div class="gallery-info">
+            <h3 class="gallery-title">${slide.title}</h3>
+            <p class="gallery-description">${slide.description}</p>
+        </div>
+    `;
+    
+    // Update active indicator
+    document.querySelectorAll('.gallery-indicators .indicator').forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === index);
+    });
+}
+
+// Function to navigate to a specific slide
+function goToSlide(index) {
+    currentSlide = index;
+    updateSlide(currentSlide);
+}
+
+// Function to change slides (previous/next)
+function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    updateSlide(currentSlide);
+}
+
+// Function to scroll to a section
+function scrollToSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 // Testimonials data
 const testimonials = [
-    {
-        name: "Sarah Johnson",
-        age: "28",
-        treatment: "Invisalign",
-        rating: 5,
-        text: "Dr. Smith and her team made my orthodontic journey so comfortable and easy. The Invisalign treatment was perfect for my lifestyle, and I love my new smile!",
-        image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-    },
-    {
-        name: "Michael Chen",
-        age: "16",
-        treatment: "Traditional Braces",
-        rating: 5,
-        text: "Getting braces was the best decision! Dr. Smith explained everything clearly and made sure I was comfortable throughout the treatment. My confidence has improved so much!",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-    },
-    {
-        name: "Emily Rodriguez",
-        age: "35",
-        treatment: "Ceramic Braces",
-        rating: 5,
-        text: "As an adult getting braces, I was nervous, but Dr. Smith's approach was so professional and caring. The ceramic braces were barely noticeable, and the results are amazing!",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-    },
-    {
-        name: "David Thompson",
-        age: "22",
-        treatment: "Invisalign",
-        rating: 5,
-        text: "The entire staff is incredible! They made every appointment pleasant and the results exceeded my expectations. I recommend Dr. Smith to everyone!",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-    }
+    // 
 ];
 
 // DOM Content Loaded

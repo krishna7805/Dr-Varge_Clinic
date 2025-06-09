@@ -297,6 +297,26 @@
                     <p class="service-description">Comprehensive treatment for jaw alignment and TMJ disorders.</p>
                     <a href="Service.html#jaw-correction" class="btn btn-primary">Learn More →</a>
                 </div>
+            <!-- Self Ligating Braces -->
+            <div class="service-card">
+                <div class="img-card">
+                    <img src="Img/Services/SelfLigatingBraces.png" alt="Self Ligating Braces image">
+                </div>
+                <h3 class="service-title">Self Ligating Braces</h3>
+                <p class="service-description">Advanced braces with reduced friction for faster, more comfortable treatment.</p>
+                <a href="Service.html#self-ligating-braces" class="btn btn-primary">Learn More →</a>
+            </div>
+            
+
+
+                <div class="service-card">
+                    <div class="img-card">
+                        <img src="Img/Services/Invisalign.png" alt="Invisalign image">
+                    </div>
+                    <h3 class="service-title">Jaw Correction</h3>
+                    <p class="service-description">Comprehensive treatment for jaw alignment and TMJ disorders.</p>
+                    <a href="Service.html#jaw-correction" class="btn btn-primary">Learn More →</a>
+                </div>
         <!-- Teeth Whitening -->
                 <div class="service-card">
                     <div class="img-card">
@@ -377,170 +397,343 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Before & After Gallery</h2>
-                <p class="section-subtitle">
-                    See the amazing transformations we've achieved for our patients.
-                    Each smile tells a story of confidence and improved oral health.
-                </p>
-            </div>
-            <div class="gallery-slider">
-                <div class="gallery-card">
-                    <div class="gallery-content">
-                        <div class="gallery-images">
-                            <div class="gallery-image-container">
-                                <div class="gallery-badge before">BEFORE</div>
-                                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                                    alt="Before treatment" class="gallery-image">
-                            </div>
-                            <div class="gallery-image-container">
-                                <div class="gallery-badge after">AFTER</div>
-                                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                                    alt="After treatment" class="gallery-image">
-                            </div>
-                        </div>
-                        <div class="gallery-info">
-                            <h3 class="gallery-title">Adult Orthodontics</h3>
-                            <p class="gallery-description">18-month treatment with Invisalign</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="gallery-nav gallery-prev" onclick="changeSlide(-1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="15,18 9,12 15,6" />
-                    </svg>
-                </button>
-                <button class="gallery-nav gallery-next" onclick="changeSlide(1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="9,18 15,12 9,6" />
-                    </svg>
-                </button>
-                <div class="gallery-indicators">
-                    <button class="indicator active" onclick="goToSlide(0)"></button>
-                    <button class="indicator" onclick="goToSlide(1)"></button>
-                    <button class="indicator" onclick="goToSlide(2)"></button>
-                </div>
-            </div>
-            <div class="gallery-cta">
-                <p>Ready to start your smile transformation?</p>
-                <button class="btn btn-primary" onclick="scrollToSection('#contact')">
-                    Book Your Consultation
-                </button>
-            </div>
-        </div>
+    <section id="gallery" class="gallery"> 
+        <div class="container"> 
+            <div class="section-header"> 
+                <h2 class="section-title">Before & After Gallery</h2> 
+                <p class="section-subtitle"> 
+                    See the amazing transformations we've achieved for our patients. 
+                    Each smile tells a story of confidence and improved oral health. 
+                </p> 
+            </div> 
+            <div class="gallery-slider"> 
+                <div class="gallery-card"> 
+                    <div class="gallery-content"> 
+                        <!-- Gallery content will be dynamically inserted here by JavaScript --> 
+                    </div> 
+                </div> 
+                <button class="gallery-nav gallery-prev" onclick="changeSlide(-1)"> 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                        <polyline points="15,18 9,12 15,6" /> 
+                    </svg> 
+                </button> 
+                <button class="gallery-nav gallery-next" onclick="changeSlide(1)"> 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                        <polyline points="9,18 15,12 9,6" /> 
+                    </svg> 
+                </button> 
+                <div class="gallery-indicators"> 
+                    <!-- Indicators will be dynamically inserted here by JavaScript --> 
+                </div> 
+            </div> 
+            <div class="gallery-cta"> 
+                <p>Ready to start your smile transformation?</p> 
+                <button class="btn btn-primary" onclick="scrollToSection('#contact')"> 
+                    Book Your Consultation 
+                </button> 
+            </div> 
+        </div> 
     </section>
+    
+    <script>
+    // Gallery data
+    const gallerySlides = [ 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Adult Orthodontics", 
+            description: "18-month treatment with Invisalign" 
+        }, 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Teen Braces", 
+            description: "24-month treatment with traditional braces" 
+        }, 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Ceramic Braces", 
+            description: "20-month treatment with ceramic braces" 
+        }, 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Invisalign Treatment", 
+            description: "15-month treatment with Invisalign" 
+        }, 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Teeth Whitening", 
+            description: "Professional whitening treatment" 
+        }, 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Dental Implants", 
+            description: "Full mouth restoration with implants" 
+        }, 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Veneers", 
+            description: "Porcelain veneers for front teeth" 
+        }, 
+        { 
+            before: "Img/Gallery/Before.png", 
+            after: "Img/Gallery/After.png", 
+            title: "Smile Makeover", 
+            description: "Complete smile transformation" 
+        } 
+    ];
+    
+    // Gallery functionality
+    let currentSlide = 0;
+    const totalSlides = gallerySlides.length;
+    let slideInterval; // Variable to store the interval ID
+    const autoRotationDelay = 5000; // Time between automatic slide changes (5 seconds)
+    
+    // Initialize the gallery on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set up initial slide
+        updateSlide(currentSlide);
+        
+        // Update indicators based on total slides
+        updateIndicators();
+        
+        // Start automatic rotation
+        startAutoRotation();
+        
+        // Pause rotation when user hovers over the gallery
+        const gallerySlider = document.querySelector('.gallery-slider');
+        gallerySlider.addEventListener('mouseenter', pauseAutoRotation);
+        gallerySlider.addEventListener('mouseleave', startAutoRotation);
+    });
+    
+    // Function to start automatic rotation
+    function startAutoRotation() {
+        // Clear any existing interval first
+        clearInterval(slideInterval);
+        
+        // Set up a new interval
+        slideInterval = setInterval(function() {
+            changeSlide(1); // Move to next slide
+        }, autoRotationDelay);
+    }
+    
+    // Function to pause automatic rotation
+    function pauseAutoRotation() {
+        clearInterval(slideInterval);
+    }
+    
+    // Function to update indicators based on total slides
+    function updateIndicators() {
+        const indicatorsContainer = document.querySelector('.gallery-indicators');
+        indicatorsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = 'indicator' + (i === currentSlide ? ' active' : '');
+            indicator.onclick = function() { 
+                goToSlide(i);
+                // Reset the auto-rotation timer when user manually changes slides
+                pauseAutoRotation();
+                startAutoRotation();
+            };
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+    
+    // Function to update the slide content
+    function updateSlide(index) {
+        const galleryContent = document.querySelector('.gallery-content');
+        const slide = gallerySlides[index];
+        
+        // Update the gallery content
+        galleryContent.innerHTML = `
+            <div class="gallery-images">
+                <div class="gallery-image-container">
+                    <div class="gallery-badge before">BEFORE</div>
+                    <img src="${slide.before}" alt="Before treatment" class="gallery-image">
+                </div>
+                <div class="gallery-image-container">
+                    <div class="gallery-badge after">AFTER</div>
+                    <img src="${slide.after}" alt="After treatment" class="gallery-image">
+                </div>
+            </div>
+            <div class="gallery-info">
+                <h3 class="gallery-title">${slide.title}</h3>
+                <p class="gallery-description">${slide.description}</p>
+            </div>
+        `;
+        
+        // Update active indicator
+        document.querySelectorAll('.gallery-indicators .indicator').forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+    
+    // Function to navigate to a specific slide
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlide(currentSlide);
+    }
+    
+    // Function to change slides (previous/next)
+    function changeSlide(direction) {
+        // Reset the auto-rotation timer when user manually changes slides
+        pauseAutoRotation();
+        
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        updateSlide(currentSlide);
+        
+        // Restart auto-rotation
+        startAutoRotation();
+    }
+    
+    // Function to scroll to a section
+    function scrollToSection(sectionId) {
+        const section = document.querySelector(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    </script>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What Our Patients Say</h2>
-                <p class="section-subtitle">
-                    Don't just take our word for it. Here's what our patients have to say
-                    about their experience and results.
-                </p>
-            </div>
-            <div class="testimonial-main" id="testimonialSlider">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="testimonial-avatar" id="testimonialAvatar">
-                            <!-- Default: Woman SVG -->
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="32" fill="#e3f0ff"/>
-                                <ellipse cx="32" cy="28" rx="14" ry="16" fill="#f9d7e5"/>
-                                <ellipse cx="32" cy="50" rx="18" ry="8" fill="#f9d7e5"/>
-                                <ellipse cx="32" cy="28" rx="10" ry="12" fill="#fff"/>
-                                <ellipse cx="32" cy="32" rx="8" ry="9" fill="#f9d7e5"/>
-                                <ellipse cx="32" cy="36" rx="6" ry="4" fill="#fff"/>
-                                <ellipse cx="26" cy="26" rx="2" ry="3" fill="#222"/>
-                                <ellipse cx="38" cy="26" rx="2" ry="3" fill="#222"/>
-                                <ellipse cx="32" cy="38" rx="3" ry="2" fill="#eab1c6"/>
-                            </svg>
-                        </div>
-                        <div class="testimonial-text">
-                            <div class="testimonial-stars" id="testimonialStars">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                            </div>
-                            <blockquote class="testimonial-quote" id="testimonialQuote">
-                                "Dr. Virangi and her team made my orthodontic journey so comfortable and easy. The Invisalign treatment was perfect for my lifestyle, and I love my new smile!"
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <div class="author-name" id="testimonialName">Sarah Johnson</div>
-                                <div class="author-details" id="testimonialDetails">Age 28 • Invisalign</div>
-                            </div>
-                        </div>
-                    </div>
+          <div class="section-header">
+            <h2 class="section-title">What Our Patients Say</h2>
+            <p class="section-subtitle">
+              Don't just take our word for it. Here's what our patients have to say about their experience and results.
+            </p>
+          </div>
+      
+          <div class="testimonial-main" id="testimonialSlider">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="testimonial-avatar">
+                  <img id="testimonialImg" src="Img/Logo.png" alt="Patient Avatar" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
                 </div>
-                <button class="testimonial-nav testimonial-prev" onclick="changeTestimonial(-1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="15,18 9,12 15,6" />
-                    </svg>
-                </button>
-                <button class="testimonial-nav testimonial-next" onclick="changeTestimonial(1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="9,18 15,12 9,6" />
-                    </svg>
-                </button>
+                <div class="testimonial-text">
+                  <div class="testimonial-stars" id="testimonialStars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                  <blockquote class="testimonial-quote" id="testimonialQuote">
+                    <!-- Will be replaced by JS -->
+                  </blockquote>
+                  <div class="testimonial-author">
+                    <div class="author-name" id="testimonialName"></div>
+                    <div class="author-details" id="testimonialDetails"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="testimonials-cta">
-                <p>Ready to join our happy patients?</p>
-                <button class="btn btn-primary" onclick="scrollToSection('#contact')">
-                    Start Your Journey Today
-                </button>
-            </div>
+      
+            <button class="testimonial-nav testimonial-prev" onclick="changeTestimonial(-1)">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15,18 9,12 15,6" />
+              </svg>
+            </button>
+            <button class="testimonial-nav testimonial-next" onclick="changeTestimonial(1)">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9,18 15,12 9,6" />
+              </svg>
+            </button>
+          </div>
+      
+          <div class="testimonials-cta">
+            <p>Ready to join our happy patients?</p>
+            <button class="btn btn-primary" onclick="scrollToSection('#contact')">
+              Start Your Journey Today
+            </button>
+          </div>
         </div>
-    </section><div class="testimonial-avatar" id="testimonialAvatar">
-        <!-- Replace SVG with logo.png and Hero.jpg alternately based on gender -->
-        <img id="testimonialImg" src="Img/Logo.png" alt="Patient Avatar" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
-    </div>
-    <script>
-    const testimonials = [
-        {
+      </section>
+      
+      <script>
+        const testimonials = [
+          {
             gender: "female",
-            quote: "I'm so glad I chose Dr. Virangi Varge for my orthodontic treatment. She is not only highly skilled and knowledgeable but also incredibly calm and caring. She listens patiently, explains everything clearly, and always ensures you're comfortable. It's clear she truly cares about her patients' well-being. An excellent orthodontist. I will recommend her to every single person in need of dental treatment. You’ll be in the best hands!!!",
-            name: "Sarah Johnson",
+            quote: "I'm so glad I chose Dr. Virangi Varge for my orthodontic treatment. She is not only highly skilled and knowledgeable but also incredibly calm and caring...",
+            name: "Harsha Barde",
             details: "Age 28 • Invisalign"
-        },
-        {
+          },
+          {
             gender: "male",
-            quote: "I recently completed 2-year orthodontic treatment with Dr. Virangi. I I had monthly follow-up appointment and, Dr. Virangi and whole team were consistently professional, attentive and friendly. The result speak for themselves - my teeth are now perfectly aligned, and I couldn't be more satisfied with my smile. If you are looking for dentist who is dedicated, skilled, and truly cared about patients, I highly recommend Dr. Virangi. Thank you Dr. Virangi, for giving me the smile I always wanted!",
-            name: "Sandesh harne",
+            quote: "I recently completed 2-year orthodontic treatment with Dr. Virangi. Dr. Virangi and the whole team were consistently professional, attentive, and friendly...",
+            name: "Sandesh Harne",
             details: "Age 34 • Traditional Braces"
-        },
-        {
+          },
+          {
             gender: "female",
-            quote: "Dr. Virangi Varge mam is very dedicated towards her work. The only reason behind my wonderful smile is Dr. Virangi varge mam.The way mam does treatment & maintains Hygiene while doing it is truly nice. My smile not only gives me beautiful look but also enhances my confidence. I am very much happy & satisfied with the dental treatment given by mam. Dr. Varge clinic is the best dental clinic at akola. Highly recommended.",
+            quote: "Dr. Virangi Varge mam is very dedicated towards her work. The only reason behind my wonderful smile is Dr. Virangi varge mam...",
             name: "Vaishnavi Dhawale",
             details: "Age 22 • Ceramic Braces"
-        },
-        {
+          },
+          {
             gender: "male",
-            quote: "Nice clean and healthy clinic with attentive staff, The dentist is knowledgeable and experienced, explained everything clearly, was easy to talk to and was present for the entire appointment.. cost of the treatment was surprisingly inexpensive looking at the excellent facility they provide here",
+            quote: "Nice clean and healthy clinic with attentive staff. The dentist is knowledgeable and experienced. Explained everything clearly...",
             name: "Prashant Bonde",
             details: "Age 30 • Invisalign"
+          },
+          {
+            gender: "female",
+            quote:"Mam is one of the reason of my beautiful smile. Mam is very polite and best dentist doctor of akola . Mam is knowledgeable person and nice treatment to gave her patient...",
+            name: "Divya Sarda",
+            details: "Age 27 • Ceramic Braces"
+          },
+          {
+            gender: "male",
+            quote:"My son Mr. Shivesh A Sable is your regular patient and his experience is very good and progressive The treatment fees anybody can afford The Dr.'s behaviour is very good and simplicity This orthodontic clinic is very teady...",
+            name: "Anoop Sable",
+            details: "Age 15 • Early Orthodontics treatment"
+          },
+          {
+            gender: "female",
+            quote:"Akola is blessed with the efficient and knowledgeable Orthodontist👍...",
+            name: "Shilpa Bikkad",
+            details: "Age 27 • Ceramic Braces"
+          },
+          {
+            gender: "female",
+            quote:"Nice clean and healthy clinic with attentive staff, The dentist is knowledgeable and experienced, explained everything clearly, was easy to talk to and was present for the entire appointment.. cost of the treatment was surprisingly inexpensive looking at the excellent facility they provide here...",
+            name: "Prashant Bonde",
+            details: "Age 26 • Dental Implants"
+          },
+
+
+
+        ];
+      
+        let currentTestimonial = 0;
+      
+        function updateTestimonial() {
+          const t = testimonials[currentTestimonial];
+          document.getElementById('testimonialQuote').textContent = t.quote;
+          document.getElementById('testimonialName').textContent = t.name;
+          document.getElementById('testimonialDetails').textContent = t.details;
+          document.getElementById('testimonialImg').src = t.gender === "male" ? "Img/icon/Male.png" : "Img/icon/Female.png";
         }
-    ];
-    
-    function updateTestimonial() {
-        const t = testimonials[currentTestimonial];
-        document.getElementById('testimonialQuote').textContent = t.quote;
-        document.getElementById('testimonialName').textContent = t.name;
-        document.getElementById('testimonialDetails').textContent = t.details;
-        // Use logo.png for female, Hero.jpg for male
-        document.getElementById('testimonialImg').src = t.gender === "male" ? "Img/Hero.jpg" : "Img/Logo.png";
-    }
-    function changeTestimonial(dir) {
-        currentTestimonial = (currentTestimonial + dir + testimonials.length) % testimonials.length;
-        updateTestimonial();
-    }
-    updateTestimonial();
-    </script>
+      
+        function changeTestimonial(dir) {
+          currentTestimonial = (currentTestimonial + dir + testimonials.length) % testimonials.length;
+          updateTestimonial();
+        }
+      
+        function scrollToSection(selector) {
+          const section = document.querySelector(selector);
+          if (section) section.scrollIntoView({ behavior: 'smooth' });
+        }
+      
+        updateTestimonial(); // Load initial testimonial
+      </script>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -719,14 +912,16 @@
                 </div>
                 <div class="footer-services">
                     <h4 class="footer-title">Our Services</h4>
-                    <ul class="footer-list">
-                        <li>Traditional Braces</li>
-                        <li>Invisalign Treatment</li>
-                        <li>Ceramic Braces</li>
-                        <li>AcceleDent Therapy</li>
-                        <li>Jaw Correction</li>
-                        <li>Teeth Whitening</li>
-                    </ul>
+                    <ul class="footer-list" style="line-height: 1;">
+                        <li><a href="Service.html" class="footer-link">Invisalign</a></li>
+                        <li><a href="Service.html#modern-braces" class="footer-link">Modern Braces</a></li>
+                        <li><a href="Service.html#self-ligating-braces" class="footer-link">Self-Ligating Braces</a></li>
+                        <li><a href="Service.html#jaw-correction" class="footer-link">Jaw Correction</a></li>
+                        <li><a href="Service.html#teeth-whitening" class="footer-link">Teeth Whitening</a></li>
+                        <li><a href="Service.html#dental-implants" class="footer-link">Dental Implants</a></li>
+                        <li><a href="Service.html#crown-bridges" class="footer-link">Crown and Bridges</a></li>
+                        <li><a href="Service.html#tooth-extraction" class="footer-link">Tooth Extraction</a></li>    
+                        </ul>
                 </div>
                 <div class="footer-contact">
                     <h4 class="footer-title">Contact Info</h4>

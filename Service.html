@@ -359,12 +359,12 @@
 
                 <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#gallery" class="nav-link">Gallery</a>
-                    <a href="#testimonials" class="nav-link">Testimonials</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="index.html#home" class="nav-link">Home</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#gallery" class="nav-link">Gallery</a>
+                    <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
                 </nav>
 
                 <!-- Desktop CTA -->
@@ -433,34 +433,56 @@
 
 
         <!-- Invisalign Section -->
-        <section id="invisalign" class="service-section">
-            <div class="container">
-                <div class="service-content">
-                    <div class="service-image">
-                        <img src="Img/Services/Invisalign.png" alt="Invisalign">
+        <section id="invisalign" class="service-section" style="background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%); box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div class="service-content" style="display: flex; flex-direction: row; align-items: center; gap: 50px; background-color: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+                    <div class="service-image" style="flex: 1; overflow: hidden; position: relative; min-height: 480px; max-height: 550px;">
+                        <img src="Img/Services/Invisalign.png" alt="Invisalign" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;">
+                        <!-- Removed the overlay gradient that was here previously -->
                     </div>
-                    <div class="service-info">
-                        <h2>Invisalign</h2>
-                        <p class="service-description">
+                    <div class="service-info" style="flex: 1; padding: 45px; position: relative;">
+                        <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%); color: white; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 30px; letter-spacing: 0.5px;">MOST POPULAR</div>
+                        <h2 style="font-size: 38px; margin-bottom: 18px; color: #333; font-weight: 700; position: relative; padding-bottom: 12px; font-family: 'Playfair Display', serif;">
+                            Invisalign
+                            <span style="display: block; width: 50px; height: 3px; background: linear-gradient(90deg, #7f53ac 0%, #647dee 100%); position: absolute; bottom: 0; left: 0;"></span>
+                        </h2>
+                        <p class="service-description" style="font-size: 17px; line-height: 1.7; color: #555; margin-bottom: 25px; font-weight: 400;">
                             Clear, removable aligners for discreet orthodontic treatment. Perfect for adults and teens who want straight teeth without visible braces.
                         </p>
-                        <div class="service-benefits">
-                            <h3>Benefits:</h3>
-                            <ul class="benefits-list">
-                                <li>Nearly invisible appearance</li>
-                                <li>Removable for eating and cleaning</li>
-                                <li>Comfortable smooth plastic material</li>
-                                <li>Shorter treatment time in many cases</li>
-                                <li>Fewer office visits required</li>
+                        <div class="service-benefits" style="margin-bottom: 35px; background-color: rgba(248, 249, 250, 0.7); padding: 22px; border-radius: 12px;">
+                            <h3 style="font-size: 20px; margin-bottom: 15px; color: #444; font-weight: 600;">Benefits:</h3>
+                            <ul class="benefits-list" style="list-style-type: none; padding: 0; margin: 0;">
+                                <li style="padding: 7px 0; position: relative; padding-left: 28px; font-size: 16px; color: #555;">
+                                    <span style="position: absolute; left: 0; top: 7px; width: 18px; height: 18px; background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px;">✓</span>
+                                    Nearly invisible appearance
+                                </li>
+                                <li style="padding: 7px 0; position: relative; padding-left: 28px; font-size: 16px; color: #555;">
+                                    <span style="position: absolute; left: 0; top: 7px; width: 18px; height: 18px; background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px;">✓</span>
+                                    Removable for eating and cleaning
+                                </li>
+                                <li style="padding: 7px 0; position: relative; padding-left: 28px; font-size: 16px; color: #555;">
+                                    <span style="position: absolute; left: 0; top: 7px; width: 18px; height: 18px; background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px;">✓</span>
+                                    Comfortable smooth plastic material
+                                </li>
+                                <li style="padding: 7px 0; position: relative; padding-left: 28px; font-size: 16px; color: #555;">
+                                    <span style="position: absolute; left: 0; top: 7px; width: 18px; height: 18px; background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px;">✓</span>
+                                    Shorter treatment time in many cases
+                                </li>
+                                <li style="padding: 7px 0; position: relative; padding-left: 28px; font-size: 16px; color: #555;">
+                                    <span style="position: absolute; left: 0; top: 7px; width: 18px; height: 18px; background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 11px;">✓</span>
+                                    Fewer office visits required
+                                </li>
                             </ul>
                         </div>
-                        <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                        <button class="btn btn-primary" onclick="scrollToSection('#contact')" style="background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%); color: white; border: none; padding: 14px 32px; font-size: 17px; font-weight: 600; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(100, 125, 238, 0.2);">
+                            Book Your Consultation
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        
+
 
     <!-- Traditional Braces Section -->
     <section id="traditional-braces" class="service-section">
@@ -547,6 +569,32 @@
             </div>
         </div>
     </section>
+
+    <section id="self-ligating-braces" class="service-section">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h2>Self-Ligating Braces</h2>
+                    <p class="service-description">
+                        Self-ligating braces are an advanced type of braces that use a special built-in clip or sliding mechanism in each bracket to hold the archwire in place—without the need for elastic bands or metal ties.</p>
+                    <div class="service-benefits">
+                        <h3>Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>Less friction for more comfortable movement</li>
+                            <li>Fewer adjustments required</li>
+                            <li>Shorter overall treatment time</li>
+                            <li>Improved oral hygiene maintenance</li>
+                            <li>Available in clear or metal options</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                </div>
+                <div class="service-image">
+                    <img src="Img/Services/SelfLigatingBraces.png" alt="Self-Ligating Braces" style="height: 20rem;">
+                </div>
+            </div>
+        </div>
+        </section>
 
     <!-- Jaw Correction Section -->
     <section id="jaw-correction" class="service-section">
@@ -796,22 +844,29 @@
                 <div class="footer-links">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-list">
-                        <li><a href="#home" class="footer-link">Home</a></li>
-                        <li><a href="#about" class="footer-link">About Dr. Virangi</a></li>
-                        <li><a href="#services" class="footer-link">Our Services</a></li>
-                        <li><a href="#gallery" class="footer-link">Before & After</a></li>
-                        <li><a href="#testimonials" class="footer-link">Patient Reviews</a></li>
+                        <li><a href="index.html#home" class="footer-link">Home</a></li>
+                        <li><a href="index.html#about" class="footer-link">About Dr. Virangi</a></li>
+                        <li><a href="index.html#services" class="footer-link">Our Services</a></li>
+                        <li><a href="index.html#gallery" class="footer-link">Before & After</a></li>
+                        <li><a href="index.html#testimonials" class="footer-link">Patient Reviews</a></li>
                     </ul>
                 </div>
                 <div class="footer-services">
                     <h4 class="footer-title">Our Services</h4>
-                    <ul class="footer-list">
-                        <li>Traditional Braces</li>
-                        <li>Invisalign Treatment</li>
-                        <li>Ceramic Braces</li>
-                        <li>AcceleDent Therapy</li>
-                        <li>Jaw Correction</li>
-                        <li>Teeth Whitening</li>
+                    <ul class="footer-list" style="line-height: 1;">
+                    <li><a href="#invisalign" class="footer-link">Invisalign</a></li>
+                    <li><a href="#traditional-braces" class="footer-link">Traditional Braces</a></li>
+                    <li><a href="#ceramic-braces" class="footer-link">Ceramic Braces</a></li>
+                    <li><a href="#modern-braces" class="footer-link">Modern Braces</a></li>
+                    <li><a href="#self-ligating-braces" class="footer-link">Self-Ligating Braces</a></li>
+                    <li><a href="#jaw-correction" class="footer-link">Jaw Correction</a></li>
+                    <li><a href="#teeth-whitening" class="footer-link">Teeth Whitening</a></li>
+                    <li><a href="#dental-implants" class="footer-link">Dental Implants</a></li>
+                    <li><a href="#crown-bridges" class="footer-link">Crown and Bridges</a></li>
+                    <li><a href="#teeth-cleaning" class="footer-link">Teeth Cleaning</a></li>
+                    <li><a href="#tooth-extraction" class="footer-link">Tooth Extraction</a></li>
+                    <li><a href="#early-orthodontic" class="footer-link">Early Orthodontic Treatment</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -843,9 +898,11 @@
                             <a href="mailto:info@drsmithortho.com">info@drsmithortho.com</a>
                         </div>
                     </div>
-                    <button class="btn btn-primary btn-sm" onclick="scrollToSection('#contact')">
+                    <a href="index.html#contact">
+                    <button class="btn btn-primary btn-sm" >
                         Book Appointment
                     </button>
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">

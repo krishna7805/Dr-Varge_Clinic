@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Orthodontic Treatment Options</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #3b82f6;
+            --accent: #ef4444;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --premium-gold: #fbbf24;
+            --premium-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-premium: 0 20px 25px -5px rgb(251 191 36 / 0.1), 0 8px 10px -6px rgb(251 191 36 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
+            min-height: 100vh;
+            padding: 1rem;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #6366f1 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), #6366f1);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .question-box {
+            background: linear-gradient(135deg, var(--secondary) 0%, #3730a3 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transform: translateY(0);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .question-box:hover::before {
+            left: 100%;
+        }
+
+        .question-box:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .arrow {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 2s infinite;
+        }
+
+        .arrow svg {
+            width: 24px;
+            height: 24px;
+            fill: #64748b;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40%, 43% {
+                transform: translateY(-8px);
+            }
+            70% {
+                transform: translateY(-4px);
+            }
+        }
+
+        .branches {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .decision-label {
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .decision-yes {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .decision-no {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .treatment-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .treatment-card.premium {
+            background: var(--premium-gradient);
+            color: white;
+            box-shadow: var(--shadow-premium);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .treatment-card.premium::before {
+            content: 'PREMIUM CHOICE';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 0.625rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-bottom-left-radius: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .treatment-card.premium::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            50% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+        }
+
+        .treatment-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .treatment-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .star.filled {
+            color: var(--premium-gold);
+        }
+
+        .star.empty {
+            color: #d1d5db;
+        }
+
+        .benefits {
+            list-style: none;
+            text-align: left;
+        }
+
+        .benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .benefits li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: currentColor;
+            border-radius: 50%;
+            margin-top: 0.375rem;
+            flex-shrink: 0;
+        }
+
+        .treatment-card.premium .benefits li::before {
+            background: white;
+        }
+
+        .sub-branches {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .sub-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .treatment-card.metal {
+            border-left: 4px solid var(--secondary);
+        }
+
+        .treatment-card.ceramic {
+            border-left: 4px solid var(--warning);
+        }
+
+        .cta {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--secondary) 0%, #3730a3 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+
+            .branches,
+            .sub-branches {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .treatment-card {
+                max-width: none;
+            }
+
+            .question-box {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                margin-bottom: 2rem;
+            }
+
+            .flowchart {
+                gap: 1.5rem;
+            }
+
+            .branches {
+                gap: 1.5rem;
+            }
+
+            .treatment-card {
+                padding: 1.5rem;
+            }
+
+            .benefits li {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Find Your Perfect Orthodontic Solution</h1>
+            <div class="divider"></div>
+        </div>
+
+        <div class="flowchart">
+            <!-- First Question -->
+            <div class="question-box">
+                Want invisible option?
+            </div>
+
+            <div class="arrow">
+                <svg viewBox="0 0 24 24">
+                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                </svg>
+            </div>
+
+            <!-- Main Branches -->
+            <div class="branches">
+                <!-- YES Branch - Invisalign -->
+                <div class="branch">
+                    <div class="decision-label decision-yes">Yes</div>
+                    
+                    <div class="treatment-card premium">
+                        <div class="treatment-header">
+                            <span>✓</span>
+                            <span class="treatment-title">Invisalign</span>
+                        </div>
+                        
+                        <div class="stars">
+                            <svg class="star filled" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg class="star filled" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg class="star filled" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg class="star filled" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                            <svg class="star filled" viewBox="0 0 24 24">
+                                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                            </svg>
+                        </div>
+                        
+                        <ul class="benefits">
+                            <li>Nearly invisible treatment</li>
+                            <li>Removable for eating & cleaning</li>
+                            <li>More comfortable than braces</li>
+                            <li>Fewer office visits needed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NO Branch -->
+                <div class="branch">
+                    <div class="decision-label decision-no">No</div>
+                    
+                    <!-- Second Question -->
+                    <div class="question-box">
+                        Traditional braces okay?
+                    </div>
+
+                    <div class="arrow">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Sub Branches -->
+                    <div class="sub-branches">
+                        <!-- YES - Metal Braces -->
+                        <div class="sub-branch">
+                            <div class="decision-label decision-yes">Yes</div>
+                            
+                            <div class="treatment-card metal">
+                                <div class="treatment-header">
+                                    <span>✓</span>
+                                    <span class="treatment-title">Metal Braces</span>
+                                </div>
+                                
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star filled" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star filled" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star empty" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star empty" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                </div>
+                                
+                                <ul class="benefits">
+                                    <li>Effective for complex cases</li>
+                                    <li>Generally lower cost</li>
+                                    <li>Durable treatment option</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- NO - Third Question & Result -->
+                        <div class="sub-branch">
+                            <div class="decision-label decision-no">No</div>
+                            
+                            <div class="question-box" style="font-size: 1rem; padding: 1rem 1.5rem;">
+                                Need quick cosmetic fix?
+                            </div>
+
+                            <div class="arrow">
+                                <svg viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </div>
+
+                            <div class="treatment-card ceramic">
+                                <div class="treatment-header">
+                                    <span>✓</span>
+                                    <span class="treatment-title">Ceramic Braces</span>
+                                </div>
+                                
+                                <div class="stars">
+                                    <svg class="star filled" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star filled" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star filled" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star filled" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                    <svg class="star empty" viewBox="0 0 24 24">
+                                        <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                                    </svg>
+                                </div>
+                                
+                                <ul class="benefits">
+                                    <li>Less noticeable than metal</li>
+                                    <li>Effective for moderate cases</li>
+                                    <li>Balanced aesthetics & function</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta">
+                <a href="#" class="cta-button">Ready to start your journey?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -796,20 +796,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .testimonial-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid var(--dental-blue, #007bff);
+    border-radius: 50%;
     width: 48px;
     height: 48px;
-    background-color: var(--white);
-    border: none;
-    border-radius: 50%;
-    box-shadow: var(--shadow);
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    z-index: 100;
+    transition: background 0.2s, border 0.2s;
 }
 
 .testimonial-nav:hover {
@@ -825,6 +826,52 @@ h1, h2, h3, h4, h5, h6 {
     right: 1rem;
 }
 
+.testimonial-nav svg {
+    stroke: var(--dental-blue, #007bff);
+}
+
+.testimonial-nav:active,
+.testimonial-nav:focus {
+    background: var(--dental-blue, #007bff);
+    border-color: var(--dental-blue, #007bff);
+}
+
+.testimonial-nav:active svg,
+.testimonial-nav:focus svg {
+    stroke: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .testimonial-nav {
+        width: 36px;
+        height: 36px;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+    }
+    .testimonial-prev {
+        left: 8px;
+    }
+    .testimonial-next {
+        right: 8px;
+    }
+    .testimonial-nav svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .testimonial-main {
+        padding: 0 48px; /* Ensures space on sides for buttons */
+    }
+
+    .testimonial-content {
+        flex-direction: column;
+        padding: 2rem;
+    }
+}
+
+/* Thumbnails */
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -855,50 +902,6 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     margin-bottom: 1rem;
 }
-/* Add this at the end or in your testimonial section styles */
-.testimonial-nav {
-    background: #fff;
-    border: 1px solid var(--dental-blue, #007bff);
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.2s, border 0.2s;
-}
-.testimonial-prev { left: 12px; }
-.testimonial-next { right: 12px; }
-.testimonial-nav svg { stroke: var(--dental-blue, #007bff); }
-
-@media (max-width: 600px) {
-    .testimonial-nav {
-        width: 38px;
-        height: 38px;
-        top: auto;
-        bottom: 16px;
-        transform: none;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.10);
-    }
-    .testimonial-prev { left: 16px; }
-    .testimonial-next { right: 16px; }
-}
-.testimonial-nav:active,
-.testimonial-nav:focus {
-    background: var(--dental-blue, #007bff);
-    border-color: var(--dental-blue, #007bff);
-}
-.testimonial-nav:active svg,
-.testimonial-nav:focus svg {
-    stroke: #fff;
-}
-
 
 .thumb-name {
     font-weight: 600;
@@ -925,6 +928,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
     color: var(--dental-gray);
 }
+
+
 
 /* Contact Section */
 .contact {

@@ -1,6 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 /* CSS Variables */
 :root {
+    /* * ========================================
+     * MODERN WELLNESS THEME
+     * Inspired by the clean, warm, and professional clinic interior.
+     * ========================================
+    */
+
+    /* --- Core Brand Colors --- */
+    /* Primary color for branding, links, buttons, and headings. Blue inspires trust and calmness. */
+    --color-primary: #4A90E2; /* var(--dental-blue) */
+
+    /* Lighter shade of the primary color for backgrounds, hover effects, or subtle highlights. */
+    --color-primary-light: #E3F2FD; /* var(--dental-blue-light) */
+    
+    /* --- Accent & Status Colors --- */
+    /* Accent color for call-to-actions, special promotions, or icons. Green suggests health and wellness. */
+    --color-accent: #4CAF50; /* var(--dental-green) */
+
+    /* Lighter shade of the accent color, perfect for success messages or alerts. */
+    --color-accent-light: #E8F5E8; /* var(--dental-green-light) */
+
+    /* --- Text Colors --- */
+    /* Primary text color for body copy. Softer than pure black and matches the dark neutral tones in your furniture. */
+    --color-text: #666666; /* var(--dental-gray) */
+    
+    /* Heading color. Using the primary blue makes titles stand out and reinforces the brand. */
+    --color-heading: #4A90E2; /* var(--dental-blue) */
+
+    /* Text color for use on dark or colored backgrounds. */
+    --color-text-inverse: #FFFFFF; /* var(--white) */
+
+    /* --- Background & Surface Colors --- */
+    /* Main background color for the body. Clean, soft, and easy on the eyes, reflecting the clinic's walls. */
+    --color-background: #F5F5F5; /* var(--dental-gray-light) */
+    
+    /* Color for surfaces like cards, modals, and content sections to create contrast. */
+    --color-surface: #FFFFFF; /* var(--white) */
+
+    /* --- UI Elements --- */
+    /* A subtle color for borders, dividers, or disabled states. */
+    --color-border: #E0E0E0; /* A slightly darker gray for better visibility */
+
+    /* --- Your Original Variables (for reference) --- */
     --dental-blue: #4A90E2;
     --dental-blue-light: #E3F2FD;
     --dental-green: #4CAF50;
@@ -8,12 +50,14 @@
     --dental-gray: #666666;
     --dental-gray-light: #F5F5F5;
     --white: #FFFFFF;
+    
+    /* --- Shadows & Fonts (from your input) --- */
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
     --font-primary: 'Inter', sans-serif;
     --font-heading: 'Poppins', sans-serif;
-    --font-title:"La Belle Aurore", cursive;
+    --font-title: "La Belle Aurore", cursive;
 }
 
 /* Reset and Base Styles */

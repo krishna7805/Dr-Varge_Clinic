@@ -66,6 +66,40 @@
                 font-size: 2rem;
             }
         }
+
+        .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--neuro-surface);
+    color: var(--dental-gray-dark);
+    box-shadow: var(--neuro-inset);
+    transition: var(--transition);
+    font-family: var(--font-body);
+    /* appearance: none; Removes default arrow */
+    /* background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em; */
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    outline: none;
+    box-shadow: var(--neuro-pressed), 0 0 0 2px rgba(74, 144, 226, 0.2);
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+}
+
+/* Responsive adjustment for the form rows */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr; /* Stack inputs on mobile */
+        gap: 0;
+    }
+}
     </style>
 </head>
 
@@ -853,8 +887,8 @@
                 <div class="contact-form-card">
                     <h3 class="form-title">Schedule Consultation</h3>
                     
-                    <!-- Added name="submit-to-google-sheet" for JS targeting -->
                     <form id="contactForm" class="contact-form" name="submit-to-google-sheet">
+                        <!-- Row 1: Name & Phone -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
@@ -865,34 +899,54 @@
                                 <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890">
                             </div>
                         </div>
+                
+                        <!-- Row 2: Age & Gender (New) -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="age">Age *</label>
                                 <input type="number" id="age" name="age" required min="0" placeholder="Your age">
                             </div>
                             <div class="form-group">
-                                <label for="date">Preferred Date</label>
-                                <input type="date" id="date" name="date" min="">
+                                <label for="gender">Gender *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="" disabled selected>Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
                             </div>
                         </div>
-                        <!-- Added Email Field -->
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="Your email">
+                
+                        <!-- Row 3: Email & Date -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="Your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date">
+                            </div>
                         </div>
+                
+                        <!-- Address -->
                         <div class="form-group">
                             <label for="address">Address *</label>
                             <input type="text" id="address" name="address" required placeholder="Your address">
                         </div>
                 
+                        <!-- Message -->
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="4"
                                 placeholder="Tell us about your orthodontic concerns or goals..."></textarea>
                         </div>
                         
-                        <!-- Added loading/success message container -->
-                        <div id="formStatus" style="margin-bottom:15px; display:none;"></div>
+                        <!-- Hidden Honeypot for Spam Protection -->
+                        <input type="text" name="honeypot" style="display:none !important" tabindex="-1" autocomplete="off">
+                
+                        <!-- Status Message -->
+                        <div id="formStatus" style="margin-bottom:15px; display:none; font-weight: 500;"></div>
                 
                         <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Book Consultation</button>
                     </form>
@@ -990,10 +1044,10 @@
                                 <a href="https://wa.me/917057099100" class="info-value">+91 7057 099
                                     100</a>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <div class="info-label">Phone</div>
                                 <a href="tel:+917057 099 100" class="info-value">+91 7057 099 100</a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="info-item">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1140,9 +1194,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">© 2025 Dr. Varge Orthodontics. All rights reserved.</p>
+                <p class="copyright">© <span id="currentYear"></span> Dr. Varge Orthodontics. All rights reserved.</p>
+
+                <script>
+                    document.getElementById('currentYear').textContent = new Date().getFullYear();
+                </script>
                 <div class="legal-links">
-                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="PrivacyPolicy.html" class="legal-link">Privacy Policy</a>
                     <a href="#" class="legal-link">Terms of Service</a>
                 </div>
             </div>

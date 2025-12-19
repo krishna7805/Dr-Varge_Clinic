@@ -54,7 +54,7 @@
                         </svg>
                         +91 7057 099 100
                     </a>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -80,7 +80,7 @@
                             </svg>
                             +91 7057 099 100
                         </a>
-                        <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                        <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                     </div>
                 </nav>
             </div>
@@ -183,7 +183,7 @@
                             <li>Suitable for all ages</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
                 <div class="service-image">
                     <img src="Img/Services/TradBraces.png" alt="Traditional Braces">
@@ -213,7 +213,7 @@
                             <li>Comfortable and smooth finish</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
                 <div class="service-image">
                     <img src="Img/Services/CeramicBraces.png" alt="Ceramic Braces">
@@ -244,7 +244,7 @@
                             <li>Better oral hygiene maintenance</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
             </div>
         </div>
@@ -267,7 +267,7 @@
                             <li>Available in clear or metal options</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
                 <div class="service-image">
                     <img src="Img/Services/SelfLigatingBraces.png" alt="Self-Ligating Braces" style="height: 20rem;">
@@ -295,7 +295,7 @@
                             <li>Reduces teeth grinding and clenching</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
                 <div class="service-image">
                     <img src="Img/Services/Invisalign.png" alt="Jaw Correction">
@@ -326,7 +326,7 @@
                             <li>Long-lasting whitening effects</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
             </div>
         </div>
@@ -351,7 +351,7 @@
                             <li>Lifetime durability with proper care</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
                 <div class="service-image">
                     <img src="Img/Services/Implants.png" alt="Dental Implants">
@@ -382,7 +382,7 @@
                             <li>Long-lasting dental restorations</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
             </div>
         </div>
@@ -407,7 +407,7 @@
                             <li>Maintains overall oral health</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
                 <div class="service-image">
                     <img src="Img/Services/Cleanndpolish.png" alt="Teeth Cleaning">
@@ -438,7 +438,7 @@
                             <li>Minimally invasive techniques</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
             </div>
         </div>
@@ -463,7 +463,7 @@
                             <li>Better long-term oral health</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
                 <div class="service-image">
                     <img src="Img/Services/earlyortho.png" alt="Early Orthodontic Treatment">
@@ -578,15 +578,17 @@
                             <a href="mailto:info@drsmithortho.com">info@drsmithortho.com</a>
                         </div> -->
                     </div>
-                    <button class="btn btn-primary btn-sm" onclick="scrollToSection('#contact')">
-                        Book Appointment
-                    </button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">© 2025 Dr. Varge Orthodontics. All rights reserved.</p>
+                <p class="copyright">© <span id="currentYear"></span> Dr. Varge Orthodontics. All rights reserved.</p>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
                 <div class="legal-links">
-                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="PrivacyPolicy.html" class="legal-link">Privacy Policy</a>
                     <a href="#" class="legal-link">Terms of Service</a>
                 </div>
             </div>

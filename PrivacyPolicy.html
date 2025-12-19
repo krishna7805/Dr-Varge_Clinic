@@ -6,7 +6,7 @@
     <title>Privacy Policy - Dental Clinic</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
-    <style>
+    <!-- <style>
         .services-intro-section {
     background: var(--white);                  /* clean white background */
     padding: 3rem 0;                           /* vertical spacing */
@@ -172,35 +172,7 @@
             }
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background-color: var(--dental-blue);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: #3d7bd1;
-        }
-
-        .btn-secondary {
-            background-color: var(--dental-green);
-            color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            background-color: #45a049;
-        }
+        
 
         .icon {
             width: 1rem;
@@ -229,7 +201,281 @@
                 font-size: 1.125rem;
             }
         }
+    </style> -->
+
+         <style>
+        /* Neumorphism Variables (Consistent with main site) */
+        :root {
+            --dental-blue: #4A90E2;
+            --dental-blue-light: #E3F2FD;
+            --dental-green: #4CAF50;
+            --dental-gray: #666666;
+            --white: #FFFFFF;
+            --neuro-bg: #e6ebf0;
+            --neuro-surface: #ffffff;
+            --neuro-shadow-dark: rgba(174, 190, 205, 0.4);
+            --neuro-shadow-light: rgba(255, 255, 255, 0.9);
+            --neuro-shadow: 8px 8px 16px var(--neuro-shadow-dark), -8px -8px 16px var(--neuro-shadow-light);
+            --neuro-shadow-sm: 4px 4px 8px var(--neuro-shadow-dark), -4px -4px 8px var(--neuro-shadow-light);
+            --neuro-inset: inset 4px 4px 8px var(--neuro-shadow-dark), inset -4px -4px 8px var(--neuro-shadow-light);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f6eded;;
+            font-family: var(--font-body);
+            color: var(--dental-gray);
+        }
+
+        .services-intro-section {
+            background: #f6eded;
+            padding: 4rem 0;
+            box-shadow: var(--neuro-shadow-sm);
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-intro-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--dental-blue), var(--dental-green));
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            color: var(--dental-blue);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--neuro-surface);
+            border-radius: 1rem;
+            box-shadow: var(--neuro-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .accordion-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 12px 12px 24px var(--neuro-shadow-dark), -12px -12px 24px var(--neuro-shadow-light);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.5rem;
+            background:#f6eded;;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover .accordion-title {
+            color: #357abd;
+        }
+
+        .accordion-title-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .accordion-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--dental-blue);
+            filter: drop-shadow(2px 2px 4px rgba(74, 144, 226, 0.3));
+        }
+
+        .accordion-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dental-blue);
+            text-align: left;
+        }
+
+        .chevron {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--dental-blue);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background: var(--neuro-bg);
+            border-radius: 50%;
+            padding: 4px;
+            box-shadow: var(--neuro-shadow-sm);
+        }
+
+        .chevron.rotated {
+            transform: rotate(180deg);
+            background: var(--dental-blue);
+            color: var(--white);
+            box-shadow: var(--neuro-inset);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.4s ease, padding 0.4s ease;
+            opacity: 0;
+        }
+
+        .accordion-content.active {
+            max-height: 1000px; /* Arbitrary large height */
+            opacity: 1;
+        }
+
+        .accordion-body {
+            padding: 0 2rem 2rem;
+            color: var(--dental-gray);
+            background-color: #f6eded;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .accordion-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .accordion-body li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .accordion-body li::before {
+            content: '•';
+            color: var(--dental-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+
+        .contact-box {
+            background: var(--neuro-bg);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin: 1.5rem 0;
+            box-shadow: var(--neuro-inset);
+            border-left: 4px solid var(--dental-blue);
+        }
+
+        .footer-section {
+            margin-top: 4rem;
+            background: #f6eded;
+            border-radius: 1rem;
+            box-shadow: var(--neuro-shadow);
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 4rem;
+        }
+        .footer-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dental-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Animation for page load */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .accordion-item {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .accordion-item:nth-child(1) { animation-delay: 0.1s; }
+        .accordion-item:nth-child(2) { animation-delay: 0.2s; }
+        .accordion-item:nth-child(3) { animation-delay: 0.3s; }
+        .accordion-item:nth-child(4) { animation-delay: 0.4s; }
+        .accordion-item:nth-child(5) { animation-delay: 0.5s; }
+        .accordion-item:nth-child(6) { animation-delay: 0.6s; }
+
     </style>
+
+<style>
+    /* Hamburger styles */
+    .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 28px;
+        height: 4px;
+        background: var(--dental-blue, #007bff);
+        border-radius: 2px;
+    }
+
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        z-index: 100;
+    }
+
+    .mobile-menu.active {
+        display: block;
+        padding: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+
+        .desktop-nav,
+        .desktop-cta {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .mobile-menu {
+            display: none !important;
+        }
+    }
+</style>
+    
 </head>
 <body>
 
@@ -269,7 +515,7 @@
                         </svg>
                         +91 7057 099 100
                     </a>
-                    <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -295,7 +541,7 @@
                             </svg>
                             +91 7057 099 100
                         </a>
-                        <button class="btn btn-primary" onclick="scrollToSection('#contact')">Book Appointment</button>
+                        <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
                     </div>
                 </nav>
             </div>
@@ -524,6 +770,129 @@
             </div>
         </div>
     </div>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="Img/Logo.png" style="height: 40px; width: 40px;">
+                        </div>
+                        <div class="logo-text">
+                            <h1 style="color: white;">Dr. Virangi Varge</h1>
+                            <h5 style="color:  #9ca3af;;">MDS Orthodontics</h5>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Creating confident smiles with expert orthodontic care.
+                        Your journey to a beautiful smile starts here.
+                    </p>
+                    <div class="social-links">
+                        <a href="tel:+917057 099 100" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4.5a1 1 0 0 1 1-1H6.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/7057 099 100" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.2 5.077 4.363.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.1 12.045c0-5.455 4.436-9.89 9.89-9.89 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.902 6.992c-.003 5.455-4.438 9.89-9.893 9.89zm8.413-18.303A11.815 11.815 0 0 0 12.09 0C5.421 0 0 5.421 0 12.088c0 2.13.557 4.209 1.615 6.033L.057 24l6.063-1.594a11.876 11.876 0 0 0 5.978 1.523h.005c6.668 0 12.088-5.421 12.088-12.088 0-3.226-1.258-6.26-3.544-8.646z" />
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a> -->
+                        <a href="https://www.instagram.com/drvirangivargeorthodontist/" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <!-- <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a> -->
+                    </div>
+
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#about" class="footer-link">About Dr. Virangi</a></li>
+                        <li><a href="#services" class="footer-link">Our Services</a></li>
+                        <li><a href="#gallery" class="footer-link">Before & After</a></li>
+                        <li><a href="#testimonials" class="footer-link">Patient Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4 class="footer-title">Our Services</h4>
+                    <ul class="footer-list" style="line-height: 1;">
+                        <li><a href="Service.html" class="footer-link">Invisalign</a></li>
+                        <li><a href="Service.html#modern-braces" class="footer-link">Modern Braces</a></li>
+                        <li><a href="Service.html#self-ligating-braces" class="footer-link">Self-Ligating Braces</a>
+                        </li>
+                        <li><a href="Service.html#jaw-correction" class="footer-link">Jaw Correction</a></li>
+                        <li><a href="Service.html#teeth-whitening" class="footer-link">Teeth Whitening</a></li>
+                        <li><a href="Service.html#dental-implants" class="footer-link">Dental Implants</a></li>
+                        <li><a href="Service.html#crown-bridges" class="footer-link">Crown and Bridges</a></li>
+                        <li><a href="Service.html#tooth-extraction" class="footer-link">Tooth Extraction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div>First floor, Durga chowk,<br> Shakambari square complex, <br>Tapadia Nagar, Akola,
+                                Maharashtra 444002</div>
+
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <a href="tel:+917057 099 100" class="info-value">+91 7057 099 100</a>
+                        </div>
+                        <!-- <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <a href="mailto:info@drsmithortho.com">info@drsmithortho.com</a>
+                        </div> -->
+                    </div>
+                    <a href="index.html#contact" class="btn btn-primary">Book Appointment</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span id="currentYear"></span> Dr. Varge Orthodontics. All rights reserved.</p>
+
+                <script>
+                    document.getElementById('currentYear').textContent = new Date().getFullYear();
+                </script>
+                                <div class="legal-links">
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="#" class="legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         let currentlyOpen = 0; // First section is open by default

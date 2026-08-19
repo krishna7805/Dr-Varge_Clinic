@@ -1,0 +1,33 @@
+{
+  "name": "varge-clinic",
+  "version": "1.0.0",
+  "description": "Dr. Virangi Varge Orthodontics & Dental Clinic - Official Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishna7805/Dr-_Varge_Clinic.git"
+  },
+  "keywords": ["dental", "orthodontics", "clinic", "varge"],
+  "author": "Krishna Barde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krishna7805/Dr-_Varge_Clinic/issues"
+  },
+  "homepage": "https://github.com/krishna7805/Dr-_Varge_Clinic#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

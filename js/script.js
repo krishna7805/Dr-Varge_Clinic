@@ -1,3 +1,7 @@
+/* ============================================================
+   VargeClinic — Production JavaScript
+   All UI logic consolidated. Zero dependencies.
+   ============================================================ */
 
 // Global variables
 let isFabOpen = false;
@@ -26,11 +30,9 @@ function initializeHeader() {
     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            header.classList.add('header-scrolled');
         } else {
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-            header.style.boxShadow = 'none';
+            header.classList.remove('header-scrolled');
         }
     });
 }
@@ -100,18 +102,15 @@ function initializeNavigation() {
     });
 }
 
-// Scroll to section function
 function scrollToSection(targetId) {
-    const element = document.querySelector(targetId);
-    if (element) {
-        const headerHeight = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-        
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+    var el = document.querySelector(targetId);
+    if (el) {
+        var headerHeight = 80;
+        var top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+    } else {
+        /* Element not on this page — navigate to index with hash */
+        window.location.href = 'index.html' + targetId;
     }
 }
 
@@ -125,21 +124,110 @@ function initializeContactForm() {
     }
 }
 
-// Floating Action Button functionality
-function initializeFab() {
-    const fabMain = document.getElementById('fabMain');
-    const fabMenu = document.getElementById('fabMenu');
-    
-    if (fabMain && fabMenu) {
-        fabMain.addEventListener('click', toggleFab);
-        
-        // Close FAB when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.floating-buttons') && isFabOpen) {
-                toggleFab();
-            }
-        });
+function stopTestimonialRotation() {
+    if (testimonialInterval) { clearInterval(testimonialInterval); testimonialInterval = null; }
+}
+
+/* ==========================================================
+   CONTACT FORM — Google Apps Script integration
+   ========================================================== */
+function sanitizeInput(str) {
+    if (typeof str !== 'string') return '';
+    return str.replace(/[<>]/g, '').trim();
+}
+
+function initContactForm() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        /* --- Honeypot check --- */
+        var hp = form.querySelector('[name="website"]');
+        if (hp && hp.value !== '') return; /* Bot detected — silently abort */
+
+        var submitBtn = form.querySelector('[type="submit"]');
+        var statusEl = document.getElementById('formStatus');
+
+        /* --- Gather & sanitize fields --- */
+        var data = new URLSearchParams();
+        data.append('name', sanitizeInput(form.elements['name'].value));
+        data.append('email', sanitizeInput(form.elements['email'].value));
+        data.append('phone', sanitizeInput(form.elements['phone'].value));
+        data.append('age', sanitizeInput(form.elements['age'].value));
+        data.append('gender', sanitizeInput(form.elements['gender'].value));
+        data.append('date', form.elements['date'].value);
+        data.append('address', sanitizeInput(form.elements['address'].value));
+        data.append('message', sanitizeInput(form.elements['message'].value));
+        data.append('honeypot', '');
+
+        /* --- Loading state --- */
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('btn-loading');
+            submitBtn.innerHTML = '<span class="spinner"></span> Submitting\u2026';
+        }
+        if (statusEl) { statusEl.className = 'form-status'; statusEl.textContent = ''; }
+
+        fetch(_sys_req_node, {
+            method: 'POST',
+            body: data,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        })
+            .then(function (res) { return res.json(); })
+            .then(function (result) {
+                if (result.result === 'success') {
+                    formSuccess(statusEl, form);
+                } else {
+                    throw new Error(result.error || 'Submission failed');
+                }
+            })
+            .catch(function (err) {
+                /*
+                 * Google Apps Script processes the POST before CORS blocks
+                 * the response. A TypeError usually means data was saved but
+                 * the response was blocked. Show optimistic success.
+                 */
+                if (err instanceof TypeError || (err.message && err.message.indexOf('Failed to fetch') !== -1)) {
+                    formSuccess(statusEl, form);
+                } else {
+                    if (statusEl) {
+                        statusEl.className = 'form-status error';
+                        statusEl.textContent = '\u2717 Something went wrong. Please call us at +91 7057 099 100.';
+                    }
+                }
+            })
+            .finally(function () {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('btn-loading');
+                    submitBtn.innerHTML = 'Book Consultation';
+                }
+            });
+    });
+}
+
+function formSuccess(statusEl, form) {
+    if (statusEl) {
+        statusEl.className = 'form-status success';
+        statusEl.textContent = '\u2713 Appointment request sent! We will contact you shortly to confirm.';
     }
+    form.reset();
+}
+
+/* ==========================================================
+   FLOATING ACTION BUTTON (FAB)
+   ========================================================== */
+function initFab() {
+    var fabMain = document.getElementById('fabMain');
+    if (!fabMain) return;
+
+    document.addEventListener('click', function (e) {
+        if (isFabOpen && !e.target.closest('.floating-buttons')) {
+            toggleFab();
+        }
+    });
 }
 
 function toggleFab() {
@@ -149,30 +237,27 @@ function toggleFab() {
     if (!fabMain || !fabMenu) return;
     
     isFabOpen = !isFabOpen;
-    
     fabMain.classList.toggle('active', isFabOpen);
     fabMenu.classList.toggle('active', isFabOpen);
 }
 
-// Scroll animations
-function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
+/* ==========================================================
+   SCROLL ANIMATIONS — IntersectionObserver
+   ========================================================== */
+function initScrollAnimations() {
+    if (!('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                entry.target.style.animationPlayState = 'running';
                 entry.target.classList.add('animate');
             }
         });
-    }, observerOptions);
-    
-    // Observe elements with animation classes
-    const animatedElements = document.querySelectorAll('.about-image, .about-content, .service-card');
-    animatedElements.forEach(el => {
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll(
+        '.about-image, .about-content, .service-card, .service-section'
+    ).forEach(function (el) {
         observer.observe(el);
     });
 }
@@ -220,6 +305,8 @@ if (!('scrollBehavior' in document.documentElement.style)) {
     window.smoothScrollPolyfill = smoothScrollPolyfill;
 }
 
-// Export functions for global access
+/* ==========================================================
+   GLOBAL EXPORTS — for onclick= handlers in HTML
+   ========================================================== */
 window.scrollToSection = scrollToSection;
 window.toggleFab = toggleFab;
